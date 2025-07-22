@@ -1,103 +1,105 @@
-import Image from "next/image";
+import Image from 'next/image'
+import React from 'react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import heroImg from '@/public/assets/hero.svg'
+import { Calendar, UserPen, Users } from 'lucide-react'
 
-export default function Home() {
+function LandingPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className=''>
+      {/* --------------------- */}
+      <header className='h-20 grid place-items-center shadow-lg'>
+        <div className="container main-container flex items-center justify-between">
+          <h1 className=' text-purple-600 text-3xl'>
+            SkillSwap
+          </h1>
+          <Button>
+            Login
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </header>
+      {/* --------------------- */}
+      <div className='container main-container grid lg:grid-cols-2 gap-8 h-full  min-h-[calc(100vh-80px)] place-items-center'>
+        <div className='' >
+          <h1 className='text-3xl lg:text-4xl xl:text-5xl  font-bold mb-2'>
+            Unlock Knowledge. Empower Each Other.
+          </h1>
+          <h3 className='text-2xl lg:text-3xl  font-medium'>
+            Exchange Skills, Learn Together
+          </h3>
+          <p className='mt-2 lg:mt-3 max-w-xl'>
+            A peer-to-peer learning platform built for curious minds.
+            Everyone has something valuable to offer—share your knowledge, learn new skills, and grow with a global community of learners.
+            From tech and design to languages and lifestyle, discover your passions and help others thrive.
+          </p>
+          <Button asChild className='px-8 mt-4 lg:mt-5'>
+            <Link href={'/dashboard'}>
+              Get Started
+            </Link>
+          </Button>
+        </div>
+        {/* HERO IMAGE */}
+        <div className='hidden lg:grid place-items-center'>
+            <Image 
+              alt='hero image'
+              src={heroImg}
+              width={600}
+              height={800}
+            />
+        </div>
+      </div>
+      {/* --------------------- */}
+      <div className='py-8 lg:py-12   bg-purple-100'>
+        <div className='container main-container'>
+        <div className='grid place-items-center mb-4 lg:mb-6'>
+          <h2 className='text-2xl lg:text-3xl xl:text-4xl font-medium'>
+            How It Works
+          </h2>
+        </div>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {/* card 1 */}
+          <div className='px-4 py-6 shadow-md rounded-lg grid place-items-center bg-white transition-all ease-in-out duration-150 hover:shadow-lg hover:scale-105'>
+            <div className='p-2 bg-purple-400 text-white rounded-full grid place-items-center mb-6'>
+                <UserPen size={50} />
+            </div>
+            <div className='text-center'>
+              <h3 className='font-bold text-xl lg:text-2xl'>Create Your Profile</h3>
+              <p>
+                Sign up and set up profile with skills you can teach and skills you can learn.
+              </p>
+            </div>
+          </div>
+          {/* card 2 */}
+          <div className='px-4 py-6 shadow-md rounded-lg grid place-items-center bg-white transition-all ease-in-out duration-150 hover:shadow-lg hover:scale-105'>
+            <div className='p-2 bg-purple-400 text-white rounded-full grid place-items-center mb-6'>
+                <Users size={50} />
+            </div>
+            <div className='text-center'>
+              <h3 className='font-bold text-xl lg:text-2xl'>Find a Partner</h3>
+              <p>
+                Browse and connect wityh members who have complementary learning intersests.
+              </p>
+            </div>
+          </div>
+          {/* card 3 */}
+          <div className='px-4 py-6 shadow-md rounded-lg grid place-items-center bg-white transition-all ease-in-out duration-150 hover:shadow-lg hover:scale-105'>
+            <div className='p-2 bg-purple-400 text-white rounded-full grid place-items-center mb-6'>
+                <Calendar size={50} />
+            </div>
+            <div className='text-center'>
+              <h3 className='font-bold text-xl lg:text-2xl'>Shedule Sessions</h3>
+              <p>
+                Arrange one-on-one learn sessions at times that work for both of you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+    </main>
+  )
 }
+
+export default LandingPage
