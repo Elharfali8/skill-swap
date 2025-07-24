@@ -17,7 +17,7 @@ const Sidebar = () => {
     ];
 
   return (
-    <aside className='hidden lg:block bg-slate-800 text-white px-6 '>
+    <aside className='hidden lg:block bg-slate-800 text-white px-4 '>
         <div className='h-full flex flex-col items-center justify-between py-12 '>
             <div>
                 <Link href={'/'} className='flex items-center gap-2 transition-all ease-in-out duration-150 hover:scale-105'>
@@ -28,7 +28,7 @@ const Sidebar = () => {
                 <ul className='grid gap-2 mt-12 '>
                 {links.map((item, index) => {
                     return (
-                        <li key={index} className={` py-1 px-2 rounded-md  ${activeLink  === item.href ? 'bg-slate-700 shadow-lg' : '' }`} >
+                        <li key={index} className={` py-2 px-3 rounded-md  ${activeLink  === item.href ? 'bg-slate-700 shadow-lg' : '' }`} >
                             <Link href={item.href} className='flex items-center gap-2 transition-all ease-in-out duration-150 hover:tracking-widest tracking-wider' >
                                 <item.icon size={20} />
                                 <span className='text-lg xl:text-xl font-medium  '>{item.name}</span>
