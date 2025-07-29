@@ -1,3 +1,4 @@
+import { MainCalendar } from '@/components/MainCalendar';
 import SuggestedUsers from '@/components/SuggestedUsers';
 import { Infinity, BookOpen, MessageCircle, Users } from 'lucide-react';
 
@@ -94,6 +95,11 @@ const recentMessages = [
         </div>
         {/* SUGGESTEDUSERS */}
         <SuggestedUsers  />
+        {/* Calendar and meetings */}
+        <div className='my-4 lg:my-8'>
+          <h1 className='text-xl lg:text-2xl font-bold flex items-center gap-2 text-gray-700 mb-2 lg:mb-3'>Meetings and Schedule</h1>
+                  <MainCalendar />
+        </div>
     </main>
   )
 }
