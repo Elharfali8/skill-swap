@@ -1,4 +1,5 @@
 import { MainCalendar } from '@/components/MainCalendar';
+import ProgressPerWeek from '@/components/ProgressPerWeek';
 import SuggestedUsers from '@/components/SuggestedUsers';
 import { Infinity, BookOpen, MessageCircle, Users } from 'lucide-react';
 
@@ -48,7 +49,7 @@ const recentMessages = [
 
 
   return (
-    <main className='min-h-[200vh]'>
+    <main className=''>
       {/*  */}
       <div className='mb-4 lg:mb-8 bg-slate-200 rounded-lg p-2 shadow-md' >
         <h3 className='text-xl lg:text-2xl font-medium text-gray-700'>
@@ -73,18 +74,18 @@ const recentMessages = [
         </div>
         {/* MESSAGES  */}
         <div className='my-4 lg:my-8 '>
-            <div className='py-2 pl-2 pr-8 bg-slate-200 rounded-lg'>
+            <div className='py-2 pl-2 pr-8 shadow-lg rounded-lg'>
               <h3 className='text-xl lg:text-2xl font-bold flex items-center gap-2 text-gray-700 mb-2 lg:mb-3'>
                 <MessageCircle size={32} /> Recent Messages 
               </h3>
               <ul className='grid gap-3' >
                 {recentMessages.map((item, index) => {
                   return (
-                    <li key={index} className='p-2 rounded-md bg-slate-400'>
+                    <li key={index} className='p-2 rounded-md border border-gray-400'>
                         <span className='block text-lg lg:text-xl font-semibold '>
                           {item.name}
                         </span>
-                        <p className='text-gray-100'>
+                        <p className='text-gray-500'>
                           {item.message}
                         </p>
                     </li>
@@ -96,10 +97,12 @@ const recentMessages = [
         {/* SUGGESTEDUSERS */}
         <SuggestedUsers  />
         {/* Calendar and meetings */}
-        <div className='my-4 lg:my-8'>
+        <div className='my-4 lg:my-8 shadow-lg rounded-lg p-2'>
           <h1 className='text-xl lg:text-2xl font-bold flex items-center gap-2 text-gray-700 mb-2 lg:mb-3'>Meetings and Schedule</h1>
                   <MainCalendar />
         </div>
+        {/* Progress */}
+        <ProgressPerWeek />
     </main>
   )
 }
