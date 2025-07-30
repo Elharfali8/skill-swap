@@ -5,9 +5,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import userIcon from '@/public/assets/user.svg'
+import { usePathname } from 'next/navigation'
 
 const Sidebar = () => {
-    const [activeLink, setActiveLinks] = useState('/dashboard')
+    const pathname =  usePathname()
 
     const links = [
         { name: "Dashboard", href: "/dashboard", icon: House },
@@ -28,7 +29,7 @@ const Sidebar = () => {
                 <ul className='grid gap-2 mt-12 '>
                 {links.map((item, index) => {
                     return (
-                        <li key={index} className={` py-2 px-3 rounded-md  ${activeLink  === item.href ? 'bg-slate-700 shadow-lg' : '' }`} >
+                        <li key={index} className={` py-2 px-3 rounded-md  ${pathname  === item.href ? 'bg-slate-700 shadow-lg' : '' }`} >
                             <Link href={item.href} className='flex items-center gap-2 transition-all ease-in-out duration-150 hover:tracking-widest tracking-wider' >
                                 <item.icon size={20} />
                                 <span className='text-lg xl:text-xl font-medium  '>{item.name}</span>
