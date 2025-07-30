@@ -6,6 +6,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import userIcon from '@/public/assets/user.svg'
 import { usePathname } from 'next/navigation'
+import { SignOutButton } from '@clerk/nextjs'
+import { Button } from './ui/button'
 
 const Sidebar = () => {
     const pathname =  usePathname()
@@ -52,7 +54,9 @@ const Sidebar = () => {
                     />
                     <div>
                         <h3 className='text-xl font-semibold'>Youssef Elharfali</h3>
-                        <button type='button' className='border-b border-b-gray-300 text-sm text-gray-300 hover:text-white'>Sign Out</button>
+                        <Button variant='link' asChild className='text-gray-300'>
+                            <SignOutButton  />
+                        </Button>
                     </div>
                 </div>
             </div>
