@@ -11,7 +11,7 @@ function LandingPage() {
       {/* --------------------- */}
       <header className='h-20 grid place-items-center shadow-lg'>
         <div className="container main-container flex items-center justify-between">
-          <h1 className=' text-purple-600 text-3xl'>
+          <h1 className=' text-blue-500 text-3xl'>
             SkillSwap
           </h1>
           <Button>
